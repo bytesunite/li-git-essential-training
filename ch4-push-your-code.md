@@ -11,6 +11,8 @@ The course examples focus on *GitHub* and *GitHub Codespace*.
 
 If you don't have a GitHub account, create one, it's free & requires an email address to get started.
 
+NOTE: To use VSCode for multiple repos you can always open a new VSCode window.
+
 To create a new repository you can navigate to `https://github.com/new` or by going to your list of repositories and click the green "New" button.
 To get to a list of your repositories for you GitHub account, click the account icon in the top right, then select "Your repositories".
 
@@ -67,6 +69,35 @@ NOTE: A fork of a repository is always PUBLIC, you don't have a choice to make i
    To visualize this, the forked remote repository is in your GitHub account.
    You will download this to you computer, saving the files to your local file system.
    A local repository is created, allowing you to modify the downloaded repository files directly on your computer. You modify, stage, and commit files on your computer. The remote repository is not directly modified when working in your local repository, as this requires a separate step to push changes up to your forked remote repo.
+
+
+## Create a file and stage it
+With the forked repo downloaded to your computer and up and running within VSCode, we will learn how to create a file and add this file to the Staging Area.
+
+1. Create a new file named *Example.md* in the parent directory with the text "This is content". Then save the file.
+
+2. Open an integrated terminal in VSCode if it is not already open.<br> 
+   NOTE: The instructor fails to show how to open a terminal in VSCode but it can be done a couple ways. You can go to the main menu and click on *Terminal* then click on *New Terminal*. The other way is to right click on a directory in the GitHub Explorer and select *Open in integrated Terminal*.
+
+3. In the terminal type the Git *add* command followed by the file name to stage a single file.
+   Alternatively you could use `git add .` to add all modified files to the staging area.<br>
+   `/$ git add Example.md`
+
+One usefull command is Git's *status* command. This is used to check on how our repository is doing. You can see it displays which branch you are on and informs you the staged *Example.md* file is awaiting a commit, and even provides a tip on how to unstage the file.<br>
+<pre><code>
+/$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be commited:
+  (use "git restore --staged &lt;file>..." to unstage)
+          new file:    Example.md
+
+/$
+</code></pre>
+
+
+
 
 
 
