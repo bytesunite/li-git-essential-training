@@ -74,7 +74,8 @@ NOTE: A fork of a repository is always PUBLIC, you don't have a choice to make i
 ## Create a file and stage it
 With the forked repo downloaded to your computer and up and running within VSCode, we will learn how to create a file and add this file to the Staging Area.
 
-1. Create a new file named *Example.md* in the parent directory with the text "This is content". Then save the file.
+1. Create a new file named *Example.md* in the parent directory with the text "This is content". Then save the file.<br>
+NOTE: The instructor provides an illustration showing created files are on our local machine. However it would help if the instructor had you go to GitHub and view your remote repo to help reaffirm this.
 
 2. Open an integrated terminal in VSCode if it is not already open.<br> 
    NOTE: The instructor fails to show how to open a terminal in VSCode but it can be done a couple ways. You can go to the main menu and click on *Terminal* then click on *New Terminal*. The other way is to right click on a directory in the GitHub Explorer and select *Open in integrated Terminal*.
@@ -97,11 +98,23 @@ Changes to be commited:
 </code></pre>
 
 
+## Commit a file
+Currently the *Example.md* file is staged but we have yet to commit it to the local repo to create a snapshot. Git's *commit* command is used to create a commit. It uses a switch to specify a message to describe the purpose of the commit.
 
+The instructor makes the following commit:<br>
+/$ `git commit -m "adds Example.md to demonstrate the git process"`<br>
 
+The result of the command is a confirmation message displayed in the terminal.<br>
+`1 file changed, 1 insertion(+)`<br>
+`create mode 100644 Example.md`
 
+You can check the status of the commit using Git's *status* command. This shows us that the file is no longer in the Staging Area and the commit was successful. It tells us that the commit is ahead by 1 of the original repo. It also provides a tip on how to push this local commit to your remote repo.<br>
+<pre><code>
+/$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" top publish your local commits)
 
-
-
-
+nothing to commit, working tree clean
+</code></pre>
 
