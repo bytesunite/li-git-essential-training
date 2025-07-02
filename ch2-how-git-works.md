@@ -50,3 +50,9 @@ NOTE: Any files that are changed but not staged & files that are in the staging 
 
 To grab files from a remote repository to modify on our local machine, the git command, `git pull` is used. This will download the content to a local folder and to the Git local repository.
 
+
+## Distributed Version Control
+A centralized version control system, such as Dropbox or OneDrive, does not keep file history. The server holds an old version of the file and when you save the file locally it syncs with the server to update to the latest version. Users that share Dropbox will only have access to the latest saved version.
+
+In a distributed version control system it works differently. It still has a server that stores files. Every user has a complete copy of the repository including all snapshots.
+So when you pull files from the server you get the whole history, not just the single latest update.
