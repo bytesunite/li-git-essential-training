@@ -29,4 +29,17 @@ Now we can grab the update file your friend modified and see the changes that we
 But what happens if both you and your friend are modifying the same file at the same time?
 Git is very good and creating a file as the result of two versions of a file. Details are provided later in the course.
 
+## Open source
+Open source software is publically available and you are free to use it and change it. Open source is a group effort writing code, testing for bugs, etc. 
+
+In the previous lesson we only had two people sharing a file. But what happens with many?
+The concept of "branches" are introduce to help manage this scenario.
+A branch is a copy of code at a given time. Any changes you make does NOT affect the original code, the branch is truly a copy of the project/file. So you create a branch then download it to your local computer.
+When we are ready to create a snapshot of the code you push it back to the provider, such as GitHub. But it is pushed to the branch rather than the original.
+When the changes in the branch are accepted they can be merged with the orginal and therefore the production code is not tainted while continuing to make changes/updates/bug fixes.
+
+The act of merging the branch with the orginal is done through what is called a "pull request". The changes in the branch are reviewed by others before before merging or adding them with the origin. After the content is added/merged the branch can be removed.
+On you local machine, when you change back to the main branch you will see the results of any changes accepted into the main branch.
+
+Branches allow multiple people to make copies, download them, modify/create content then push them back onto the branch and waiting for evaluation before accepting them into the main branch.
 
