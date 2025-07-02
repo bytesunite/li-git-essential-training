@@ -15,3 +15,9 @@ So all those old versions are stored in Git and we can access the history of our
 
 In addition to using git on our local computer you can store versions of your code in the cloud, protecting you if your computer is lost/damaged/etc. A cloud provider that works with Git, such as GitHub, is one solution to not only storing it locally but also on the cloud.
 
+## Git to share code
+Have you ever shared code with a coworker or friend?
+If you have a file "code1" and you share this with your friend you want to make sure they have access to it. Emailing code is problematic as it can be marked as spam or the email provider limits the size of the attachment. You could put it on a USB thumb drive but this is not very convenient unless your friend or coworker is close.
+
+With a cloud provider, such as GitHub, we can make our code public so others can gain access to it by giving them the url where they can access the content. On GitHub a "repository" is a location where you can store your code and make it available to others. This provides an easy way for other to access your code as long as they have an Internet connection.
+
