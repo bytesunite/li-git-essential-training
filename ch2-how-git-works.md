@@ -1,0 +1,43 @@
+# Chapter 2 - How Does Git Work
+Now that you know the concepts of Git, lets discuss the technical details of Git.
+
+## Use Git Locally
+On you local computer you have a file explorer or finder that gives you access to files and folders. 
+Git provide 2 additional pieces
+1. Staging Area
+2. Local Repository (.git)
+
+You have a file "code1.md" saved in a local folder. You work on it and come to a point you want to take a snapshot. The first step is to add the file to the staging area.
+To add a file to the stagging area you use the git `add` command followed by the file name.
+Open a terminal, navigate to the location of the file, then enter the command.
+
+<pre>
+myFolder/
+  code1.md
+  other.md
+</pre>
+
+myFolder/$ `git add code1.md`
+
+If you make changes to multiple files and want to add all modified files to the staging area you can use `git add .`.  The example below would add all modified files (code1.md, test.md) to the staging area.
+
+<pre>
+myFolder/
+  code1.md    changed
+  other.md
+  test.md     changed
+</pre>
+
+myFolder/$ `git add .`
+
+
+Files that are changed that we choose NOT to move to the staging are labeled as "modified".
+Git gives you the flexibility to stage all changes or choose specify files to put in the staging area.
+
+One the files are staged, the next step is to add them to the local repository.
+The command is `git commit`. The details of this command are covered later (git commit -m 'updated title').
+
+So by using Git to move updated files to the Staging Area, then commiting them to the Repository we can track changes to our files on our computer without having to make multiple copies of our file(s).
+
+
+
