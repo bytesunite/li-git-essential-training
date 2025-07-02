@@ -16,3 +16,24 @@ GitHub repository [git-essential-training-5988161](https://github.com/linkedInLe
    This will open an editor for you within the browser window.
 
 To view and delete a Codespace you may have to refresh the screen but you can click on the green *Code* button and go to the *Codespaces* tab and see a list of them. The three small dots to the right of the name opens a small window with the option to delete the Codespace.
+
+## Install Git on Windows
+To install Git on Windows go to the [Git website](https://git-scm.com) and download the installer. The website does a good job at automatically identifying your operating system.
+The downloads link also provides options for multiple operating systems.
+NOTE: If you want to use Visual Studio Code as your editor, make sure this is installed before installing Git because during the installation process it lets you pick VSCode.
+
+Once the Git installer is downloaded to your downloads folder you can double click it to start the install process.
+The install asks you for a location to install Git but the default is fine.
+Then it asks you about desktop icon and others but the defaults are fine.
+Then it asks for a start menu folder, the default is fine.
+Then it asks for an editor, this is where you can select VisualStudioCode which is friendlier than the default choice of vim (you must have VisualStudioCode installed first).
+Next it asks what you would like to name the initial branch of new repositories. This option was added because the word "master" is considered racially insensitive. So it is suggested to choose main.
+Next the commandline default is fine
+Next SSH can be left with the default.
+For line endings you can leave the default
+From this point forward you can accept the defaults and then install.
+
+
+To test that the installation was successful you can open the Windows Command Line and type "git" and it should display a list of usage commands.
+
+To see the version of git you can type `git --version` at the command prompt.
