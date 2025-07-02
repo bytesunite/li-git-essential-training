@@ -37,3 +37,10 @@ From this point forward you can accept the defaults and then install.
 To test that the installation was successful you can open the Windows Command Line and type "git" and it should display a list of usage commands.
 
 To see the version of git you can type `git --version` at the command prompt.
+
+
+## Install Git on Linux
+First, many Linux distributions come with Git. Open a terminal and type `git --version` to check if Git is already installed. If not continue with the instructions below.
+If you go the the Git website and notice your version is outdated you can type `sudo apt-get install git` in your terminal.
+Just like Windows, go to the [Git website](https://git-scm.com)
+Then click on downloads and instructions are provided to install Git for the different Linux distrubutions. For example Ubuntu uses `sudo apt-get install git`.
