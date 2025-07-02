@@ -30,6 +30,9 @@ myFolder/
 
 myFolder/$ `git add .`
 
+NOTE: The instructor failes to mention when you add a file to the staging area, then modify it, you will have 2 different snapshots. Git will not automatically update the staging area with updates to files. You can run git add again to update the staging area with the lastest save.
+
+NOTE: The instructor fails to mention `git status` is a command that is helpful to determine if files are staged and which branch you are on.
 
 Files that are changed that we choose NOT to move to the staging are labeled as "modified".
 Git gives you the flexibility to stage all changes or choose specify files to put in the staging area.
@@ -39,5 +42,11 @@ The command is `git commit`. The details of this command are covered later (git 
 
 So by using Git to move updated files to the Staging Area, then commiting them to the Repository we can track changes to our files on our computer without having to make multiple copies of our file(s).
 
+## Use a Git Provider
+Now lets see how to push our local code to a remote repository.
+This allows us to access content from other devices or by other people.
+The command `git push` is used to move our snapshot(s) from out local machine to a Git Provider, such as GitHub.
+NOTE: Any files that are changed but not staged & files that are in the staging area are NOT pushed to the remote repository. Only files in the local repository that were added with `git commit` will be pushed to the remote repository.
 
+To grab files from a remote repository to modify on our local machine, the git command, `git pull` is used. This will download the content to a local folder and to the Git local repository.
 
