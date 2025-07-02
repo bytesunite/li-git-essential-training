@@ -49,3 +49,11 @@ Then click on downloads and instructions are provided to install Git for the dif
 ## Install Git on macOS
 Git may already be installed on your mac. Open a terminal and type `git --version`.
 If it is not installed you can go to the [Git website](https://git-scm.com) to find instructions. There are a couple options and the more popular choice is using Homebrew with `brew install git`. However you must have Homebrew installed first. This is also how you update git if it is outdated.
+
+
+## Git GUI Clients
+Performing Git commands in the terminal is not for everyone so there are GUI interfaces to provide a more friendly graphical interface. Go to the [Git website](https://git-scm.com) and look for and click on *GUI Clients*.
+
+There are many options and each GUI Client provides information about which operating systems they support, and if they are free/paid.
+
+One option is Visual Studio code and the next lesson talks about using Git inside of VSCode.
