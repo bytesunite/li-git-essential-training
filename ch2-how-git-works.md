@@ -56,3 +56,6 @@ A centralized version control system, such as Dropbox or OneDrive, does not keep
 
 In a distributed version control system it works differently. It still has a server that stores files. Every user has a complete copy of the repository including all snapshots.
 So when you pull files from the server you get the whole history, not just the single latest update.
+
+# How to start working with Git
+This lesson just says Git is hard and to learn the basics and learn at your own pace.
