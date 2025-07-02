@@ -21,3 +21,12 @@ If you have a file "code1" and you share this with your friend you want to make 
 
 With a cloud provider, such as GitHub, we can make our code public so others can gain access to it by giving them the url where they can access the content. On GitHub a "repository" is a location where you can store your code and make it available to others. This provides an easy way for other to access your code as long as they have an Internet connection.
 
+## Git to collaborate
+Sharing code is easy enough, but what if you want to collaborate with others?
+You have a file "code1" on your computer. You push this to GitHub to make available to others. Your friend downloads the file, makes changes to the file and also use Git to keep versions of the file. When they are done they push the file back to GitHub with the Git history of updates they made.
+Now we can grab the update file your friend modified and see the changes that were made.
+
+But what happens if both you and your friend are modifying the same file at the same time?
+Git is very good and creating a file as the result of two versions of a file. Details are provided later in the course.
+
+
