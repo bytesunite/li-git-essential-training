@@ -57,3 +57,23 @@ Performing Git commands in the terminal is not for everyone so there are GUI int
 There are many options and each GUI Client provides information about which operating systems they support, and if they are free/paid.
 
 One option is Visual Studio code and the next lesson talks about using Git inside of VSCode.
+
+
+## (Optional) Install Visual Studio Code
+Visual Studio Code is a popular code editor that is supported by all major operating systems.
+You can download it from the [Visual Studio Code website](https://code.visualstudio.com)
+
+Visual Studio Code is very similar to the online editor used with Codespaces. VSCode supports Git but also have many extension that help you write code.
+For windows the middle of the website provides a download button. There is also a download button in the top right to assist you in downloading and installing VSCode on other platforms.
+
+After VSCode is installed, open it and navigate to the left column and look for extensions. It is the icon that looks like a collection of 4 squares. Click on this and type in *Git*.
+There are many helpful extensions. 
+
+Some of the more popular extensions for git are
+- Git Graph
+- Git History
+- Git Lens
+
+These extensions can help you track changes, see who has last modified the file, and visualize your project's history.
+
+Using a GUI is very beginner friendly.
