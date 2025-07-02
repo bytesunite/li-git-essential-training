@@ -44,3 +44,8 @@ First, many Linux distributions come with Git. Open a terminal and type `git --v
 If you go the the Git website and notice your version is outdated you can type `sudo apt-get install git` in your terminal.
 Just like Windows, go to the [Git website](https://git-scm.com)
 Then click on downloads and instructions are provided to install Git for the different Linux distrubutions. For example Ubuntu uses `sudo apt-get install git`.
+
+
+## Install Git on macOS
+Git may already be installed on your mac. Open a terminal and type `git --version`.
+If it is not installed you can go to the [Git website](https://git-scm.com) to find instructions. There are a couple options and the more popular choice is using Homebrew with `brew install git`. However you must have Homebrew installed first. This is also how you update git if it is outdated.
