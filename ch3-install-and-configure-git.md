@@ -77,3 +77,50 @@ Some of the more popular extensions for git are
 These extensions can help you track changes, see who has last modified the file, and visualize your project's history.
 
 Using a GUI is very beginner friendly.
+
+
+## Configure Git
+If you are using a Codespace for this course you don't need to configure anything.
+But when working locally there are some things you should know.
+
+There are a few different .gitconfig files. The two of most importance are the local config file and the global config file.
+
+### Global Git Config
+The global Git config file applies to all the repositories on your device.
+You can find the global config file in your user directory or the home directory.
+
+<pre>
+  // Windows Global Git Config file
+  C:\users\user\.gitconfig
+
+  // macOS
+  name@mac ~ % ls -la
+  ...
+  .gitconfig
+  ...
+</pre>
+
+### Local Git Config
+The local Git config file refers to a specific repository.
+This is stored in a file named *config* which is in a folder called *.git*.
+
+`.git/config`
+
+The settings in the local config file will override the settings in the global config file.
+You can modify these files in the terminal, in a text editor or code editor.
+Some common settings include:
+- Setting your default editor
+- Defining the default branch name
+- Creating aliases
+
+
+### Global - Set Git Config Settings
+There are some settings that are required.
+First lets look at the Global config file.
+Your name & email address should match the one used on your Git provider (such as GitHub).
+NOTE: The instructor jumps into setting configuration settings instead of explaining how to view existing values with `git config list`. You may already have name/email set.
+
+To configure your name you can type `git config --global user.name [Your name here]`
+
+
+
