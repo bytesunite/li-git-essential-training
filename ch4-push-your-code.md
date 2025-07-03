@@ -118,3 +118,11 @@ Your branch is ahead of 'origin/main' by 1 commit.
 nothing to commit, working tree clean
 </code></pre>
 
+
+## Push the file to the remote repository
+The last lesson made a commit on the file *Example.md* placing a snapshot in the local repo. The local repo is now ahead of the remote repo. To send the file from the local repo to the remote repo, use Git's *push* command.
+
+`/$ git push`
+
+If you go to the remote repo you should now see the new *Example.md* is part of your forked repo. The commit message should also be visible.
+
