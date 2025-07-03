@@ -203,3 +203,63 @@ myRepoDir/$ <code>git push</code>
 
 
 If you look in your remote repository the file should no longer exist. However, there is still a commit that logs this file was removed. Later in the course it will discuss how to recover files.
+
+
+## Rename Files
+To see this in action, rename the file "Example.md" to "NewName.md" and then run `git status` to see the results. The response might surprise you but we'll describe what is going on.
+<pre>
+myRepoDir/$ <code>git status</code>
+On branch main
+You branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm &lt;file>..." to update what will be committed)
+  (use "git restore &lt;file>..." to discard changes in working directory)
+      deleted:   Example.md
+
+Untracked files:
+  (use "git add &lt;file>..." to include in what will be committed)
+      NewName.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</pre>
+
+So what is going on? Right now Git is telling us that the old file was deleted and a new file was created. That can't be right...can it? To gain a better understanding let's stage the renamed file and then view the status.
+<pre>
+myRepoDir/$ <code>git add .</code>
+
+myRepoDir/$ <code>git status</code>
+...
+Changes to be committed:
+  (use "git restore --staged &lt;file>..." to unstage)
+      renamed:    Example.md -> NewName.md
+</pre>
+
+After we stage the renamed file, Git now understands the file was renamed from "Example.md" to "NewName.md".
+
+Before moving on commit changes on the renamed file.
+<pre>
+myRepoDir/$ <code>git commit -m "rename Example.md to NewName.md"</code>
+</pre>
+
+Now lets change a name directly in the terminal with Git's `git mv` command. When we do this you can see our file explorer is updated with the new name. Git also also stages the renamed file automatically. 
+<pre>
+myRepoDir/$ <code>git mv gitStatusDemo.md newStatus.md</code>
+
+myRepoDir/$ <code>git status</code>
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged &lt;file>..." to unstage)
+      renamed:    gitStatusDemo.md -> newStatus.md
+</pre>
+
+
+We can now commit to renamed file that Git automatically staged for us when using `git mv` to rename the file.
+<pre>
+myRepoDir/$ <code>git commit -m "rename gitStatusDemo.md to newStatus.md"</code>
+</pre>
+
+So you can choose whichever method you prefer. Using Git will automatically stage the renamed file & without using Git you will have to stage the file yourself.
+
