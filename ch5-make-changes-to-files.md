@@ -171,3 +171,35 @@ This is content
 This additional change is acceptable so go ahead and commit & push the file "Example.md".
 
 
+## Delete Files
+When you delete a file in a Git repository this change is tracked. You can delete a file using a GUI or command line. Git even has a command `git rm &lt;file>`.
+
+For example, delete the file "Example02.md", the use the command `git status` to see how Git responded to the deletion. It shows the file has been deleted.
+<pre>
+myRepoDir/$ <code>git status</code>
+On branch main
+Your branch is up to date with 'origin/main'
+
+Changes not staged for commits:
+  (use "git add/rm &lt;file>..." to update what will be committed)
+  (use "git restore &lt;file>..." to discard changes in working directory)
+      deleted:   Example02.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</pre>
+
+
+Like any other change, a deleted file is a tracked action and you must stage it and commit the changed.
+<pre>
+myRepoDir/$ <code>git add .</code>
+
+myRepoDir/$ <code>git commit -m 'removed Example02.md'</code>
+<samp>[main 80dfb12] removed Example02.md
+1 file changed, 1 deletion(-)
+delete mode 100644 Example02.md
+</samp>
+myRepoDir/$ <code>git push</code>
+</pre>
+
+
+If you look in your remote repository the file should no longer exist. However, there is still a commit that logs this file was removed. Later in the course it will discuss how to recover files.
