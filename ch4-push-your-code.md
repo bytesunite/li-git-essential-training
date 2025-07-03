@@ -201,3 +201,25 @@ Then you can try Git's *push* command again and it should now work.<br>
 
 The final step is to go to GitHub, refresh the page and you should see your local files have been pushed to your remote repo.
 
+
+## Challenge: Push your first code
+The first challenge asks you to create a new repository on GitHub. Then open your new repository in your local environment or Codespace. Create a new file with your favorite programming language or use a Markdown file. Save the file and then make it available in your remote repository.
+
+My first attempt:
+1. Go to GitHub and create a new private repo named "my-first-repo" with a README and a MIT license. (This process will create an initial commit)
+2. Copy the repo url and then go to my local environment
+3. Create a new folder on my computer to store the repo such as FirstRepo.
+4. Open this folder in my local environment. VSCode makes it easy but I will try using the    command line to clone the remote repo use Git's clone command.
+(git clone [url]) and then cd into the new repo directory "my-first-repo".
+5. Create a new file such as "hello.py" that prints "hello" to the terminal.
+6. Use Git's add command to add the file to the Staging area (git add hello.py)
+7. Use Git's commit command to make a new commit (git commit -m 'add my hello app')
+8. Use Git's push command to push it to the remote repo (git push)
+
+Instructor Solution:
+The instructor does not show creating a new repo and cloning it.
+Instead it mentions that you would create a new repository using a template and clone it to you local environment. Then the following steps are shown: 
+1. creating a file in the local environment `Challenge01.md`
+2. using `git add .` to stage the file 
+3. using `git commit -m 'Adding Challenge01.md as a challenge'`
+3. using `git push` to push the file to the remote repo.
