@@ -137,3 +137,67 @@ For this example we will go to GitHub and create a file on the forked repo to si
 `/$ git pull`
 
 
+## Initialize a repository locally and sync it
+Sometimes you will have local files and want to create a new remote repository for them.
+
+1. First let's create a new folder on your computer with a couple files in it.<br>
+<pre><code>
+  GitInitExample/
+    File01.md
+    File02.md
+</code></pre>
+
+2. Open this folder in VSCode or a terminal and generate a new local repository by using Git's *init* command.<br>
+`GitInitExample/$ git init`
+
+After you run this command you can use the terminal to list the files in the directory and you should see a new hidden *.git* file was created.
+<pre><code>
+  GitInitExample/
+    File01.md
+    File02.md
+    .git
+</code></pre>
+
+3. Next, lets add both of these files to the Staging Area and then create a new commit. It is common to provide the text "initial commit" to a commit when generating a new repo and making the first commit. It is your starting point.
+
+`GitInitExample/$ git add .`<br>
+`GitInitExample/$ git commit -m "initial commit"`
+
+
+With our local repository created, lets go to GitHub and create an empty remote repository.
+If you remember, you can go to a url https://github.com/new to create a new repo or you can navigate to your repositories and click on the green button "New" to create a new repo.
+Create a new repo as follows:
+1. Click "New" to create a new repository
+2. Provide a name for the repository, like "git-init-example"
+3. Make the repository PRIVATE
+4. Do NOT initialize it. This means you do NOT generate a README, you should select None for Add .gitignore, and select None for the license.
+5. The click on Create Repository
+
+When you create the Repo on GitHub it provides the repo url and some info on ways to use the repo. 
+
+6. Copy the repo url
+7. In your terminal you need to connect your local repo to your remote repo. To do this use the following command and paste in the url you copied from the previous step.<br>
+`GitInitExample/$ git remote add origin [the copied url]`
+
+This should link your local and remote repo. However at this point your local files have not been pushed to the remote repo.
+ 
+8. Use Git's *push* command to push your local repository files to your remote repo. You might be surprised but doing this results in an ERROR<br>
+<pre><code>
+GitInitExample/$ git push
+fatal: The current branch main has no upstream branch
+To push the current branch and set the remote as upstream, use
+
+  git push --set-upstream upstream origin main
+</code></pre>
+
+This is telling us we need to take additional steps to push to the remote repo.
+What is happening is that our local repo has a *main* branch, but the remote repo does not have a branch yet. To fix this we follow the error message suggestion to set the upstream branch.<br>
+NOTE: If you did not change the default branch name, you may see "master" instead of "main".To change this you can type `git branch -m master main` and to see the current branch you can type `git branch`<br>
+`GitInitExample/$ git push --set-upstream origin main`
+
+Then you can try Git's *push* command again and it should now work.<br>
+`GitInitExample/$ git push`<br>
+`Everything up-to-date`
+
+The final step is to go to GitHub, refresh the page and you should see your local files have been pushed to your remote repo.
+
