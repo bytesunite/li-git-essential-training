@@ -9,15 +9,15 @@ You can try this out by creating a file "gitStatus.md", saving it and then open 
 1. Create a new file "gitStatusDemo.md"
 2. View the status
 <pre>
-  myRepoDir/$ `git status`
-  <samp>Your branch is up to date with 'origin/main'
+myRepoDir/$ <code>git status</code>
+<samp>Your branch is up to date with 'origin/main'
 
-  Untracked files:
-    (use "git add &lt;file>..." to include in what will be committed)
-        gitStatusDemo.md
+Untracked files:
+  (use "git add &lt;file>..." to include in what will be committed)
+      gitStatusDemo.md
 
-  nothing added to commit but untracked files present (use "git add" to track)
-  </samp>
+nothing added to commit but untracked files present (use "git add" to track)
+</samp>
 </pre>
 
 Git confirms that "gitStatusDemo.md" is *untracted*.
@@ -25,8 +25,8 @@ Git confirms that "gitStatusDemo.md" is *untracted*.
 Go ahead and stage this file with the `git add` command, then check the status again with the `git status` command. This adds the file to the Staging Area and tells you it is ready to be commited. It also provides instructions on how to remove it from the staging area.<br>
 NOTE: If there are any other files that have not been staged or commited, they will show up as *untracked*<br>
 <pre>
-myRepoDir/$ `git add gitStatusDemo.md`
-myRepoDir/$ `git status`
+myRepoDir/$ <code>git add gitStatusDemo.md</code>
+myRepoDir/$ <code>git status</code>
 <samp>On branch main
 Your branch is up to date with 'origin/main'
 
@@ -39,12 +39,12 @@ Changes to be committed:
 
 With the file staged, lets commit the file with Git's `git commit` command and view the status with Git's `git status` command. After our commit it tells us that our working tree is clean. It also provides hints on how to push this file to a remote repository.
 <pre>
-myRepoDir/$ `git commit -m "added gitStatusDemo.md to demonstrate status"`
+myRepoDir/$ <code>git commit -m "added gitStatusDemo.md to demonstrate status"</code>
 <samp>[main 23455b6] added gitStatusDemo.md to demonstrate status
 1 files changed, 1 insertion(+)
 create mode 100644 gitStatusDemo.md
 
-myRepoDir/$ git status
+myRepoDir/$ <code>git status</code>
 On branch main
 Your branch is ahead of 'orgin/main' by 1 commit.
   (use "git push" to publish your local commits)
@@ -54,9 +54,9 @@ Nothing to commit, working tree clean
 
 As you can see our local repo is 1 commit ahead of the remote repo. The push the updated file to the repo use Git's `git push` command.
 <pre>
-myRepoDir/$ `git push`
+myRepoDir/$ '<code>it push</code>
 ...
-myRepoDir/$ `git status`
+myRepoDir/$ <code>git status</code>
 <samp>On branch main
 Your branch is up to date with 'origin/main'.
 
@@ -72,7 +72,7 @@ But Git can not only track new files added to your repo, but changes inside of t
 
 In a previous lesson a file named 'Example.md' was created, staged and commited. Let's modify this file and save it. After you do this run Git's `git status` command. It will tell you this previously committed file is now *modified* but not staged.
 <pre>
-myRepoDir/$ `git status`
+myRepoDir/$ <code>git status</code>
 <samp>On branch main
 Your branch is up to date with 'origin/main'
 
@@ -85,7 +85,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 <samp>
 </pre>
 
-The next step is to stage the modified file, commit it, and push it to your repo.<br>
+The next step is to stage the modified file, commit it, and push it to your repo.
+
 myRepoDir/$ `git commit -m "added an additional line of text"`
 
 Changes can add up quickly, so how can we see changes we made to a file?
@@ -112,7 +113,7 @@ Git's `git status` shows "Examples.md" as *modified*. We have not staged or comm
 Use Git's `git diff` command to see the differences from the previous state and now.<br>
 NOTE: You can specify a file name or leave it blank to compare all file changes.
 <pre>
-myRepoDir/$ `git diff Example.md`
+myRepoDir/$ <code>git diff Example.md</code>
 <samp>diff --git a/Example.md b/Example.md
 index a5580a3..68b9f67 100644
 --- a/Example.md
@@ -140,8 +141,8 @@ But what if you staged the file and want to still see changes to the file?
 Use Git's `git diff --cached` command.<br>
 To demonstrate this, stage the file "Example.md", show the status, then show the cached diff. You should see the same results we saw before the modified file was added to the Staging Area.
 <pre>
-myRepoDir/$ `git add .`
-myRepoDir/$ `git status`
+myRepoDir/$ <code>git add .</code>
+myRepoDir/$ <code>git status</code>
 On branch main
 Your branch is up to date with 'origin/main'.
 
@@ -149,7 +150,7 @@ Changes to be commited:
   (use "git restore --stages &lt;file>..." to unstage)
     modified: Example.md
 
-myRepoDir/$ `git diff --cached`
+myRepoDir/$ <code>git diff --cached</code>
 <samp>diff --git a/Example.md b/Example.md
 index a5580a3..68b9f67 100644
 --- a/Example.md
@@ -168,3 +169,5 @@ This is content
 
 
 This additional change is acceptable so go ahead and commit & push the file "Example.md".
+
+
