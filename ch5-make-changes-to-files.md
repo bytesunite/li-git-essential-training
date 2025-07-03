@@ -263,3 +263,64 @@ myRepoDir/$ <code>git commit -m "rename gitStatusDemo.md to newStatus.md"</code>
 
 So you can choose whichever method you prefer. Using Git will automatically stage the renamed file & without using Git you will have to stage the file yourself.
 
+
+## Working With Folders
+Just like files, Git can keep track of folders.
+
+If you create a new folder "First_Folder" and add files to it, Git considers this "untracked files". When you move a file to a folder, running `git status` will report a file was deleted, but all you need to do is stage the moved file. This behavior was mentioned in the last lesson when we renamed a file and the status was not updated until we staged the renamed file.
+
+To try this out first create a folder, then use `git status` to check the status. It should say there are untracked files. For example add a folder named "First_Folder" (use terminal or GUI).
+<pre>
+myRepoDir/$ <code>mkdir First_Folder</code>
+
+myRepoDir/$ <code>git status</code>
+</pre>
+
+Git does not let you know a new folder was created. The empty folder "First_Folder" is clearly in our local repo but Git is not recognizing anything yet.
+
+Next, in VSCode move an existing file "NewName.md" into the new folder "First_Folder" by dragging and dropping it. Then check the git status again.
+<pre>
+myRepoDir/$ <code>git status</code>
+...
+Changes not staged for commit:
+  deleted newStatus.md
+
+Untracked files: ...
+    First_folder/
+</pre>
+
+After we added the file "newStatus.md" into the folder "First_Folder" Git tells us that the file was deleted and a new folder was created.
+The folder we created earlier is magically visible by Git now, because it contains a file. Previously the empty folder was not recognized by Git. But remember from the last lesson that a renamed file was also marked as deleted until it was staged. The same is true with moving files...the moved file shows up as deleted until you stage it.
+
+Stage the moved file "newStatus" with `git add .`, then view the status.
+<pre>
+myRepoDir/$ <code>git add .</code>
+
+myRepoDir/$ <code>git status</code>
+...
+   renamed: NewName.md -> First_Folder/NewName.md
+</pre>
+
+Notice how Git says "renamed" instead of "moved". This is close enough, as we know the file was not deleted or renamed, but we simply moved the file into a directory.
+
+Go ahead and commit these changes and push to the remote repo.
+Then go to GitHub to confirm the new folder exists and that it contains the file we moved.
+<pre>
+myRepoDir/$ <code>git commit -m 'moved NewName.md to First_Folder'</code>
+
+myRepoDir/$ <code>git push</code>
+</pre>
+
+If you want to create a directory structure with some empty folders and track them, the best solution is to create a ".gitkeep" file inside an empty folder. The file inself does not need to contain any content, it can be an empty file. Git will then recognize the folder. After adding files to the folder you can remove the .gitkeep file, as Git will continue to track a folder that contains files.
+
+<pre>
+Second_Folder/
+  .gitkeep
+</pre>
+
+So what did we learn?
+- Git does not track empty folders by default. A file must be added first, or an empty .gitkeep file.
+- Moving a file to a folder does not delete the file. Files must be staged to see changes.
+
+
+
