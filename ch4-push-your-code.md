@@ -126,3 +126,14 @@ The last lesson made a commit on the file *Example.md* placing a snapshot in the
 
 If you go to the remote repo you should now see the new *Example.md* is part of your forked repo. The commit message should also be visible.
 
+
+## Pull changes from the remote repository
+If a remote repository is ahead of a local repository it is possible to pull files from the remote repo to your local repo.
+For this example we will go to GitHub and create a file on the forked repo to simulate a situation where a repo has one or more files that are ahead of your local repo.
+
+1. Go to the forked repo at GitHub and click the *Add File* button then select *Create new file*. Give the file a name, such as *Example02.md* and add some text "This is some text". Then click the button *Commit changes*. A default commit message is provided so you can leave this and continue by clicking *Commit changes*.
+
+2. Go back to your local repo and you will see that it does not have the new file that we just created. To download the new content to the local repo, use Git's *pull* command. After running this command you should see the new *Example02.md* file in your local repo.<br>
+`/$ git pull`
+
+
