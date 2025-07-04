@@ -323,4 +323,65 @@ So what did we learn?
 - Moving a file to a folder does not delete the file. Files must be staged to see changes.
 
 
+## Undo Your Changes
+It is possible to remove a staged file from the Staging area. It is also possible to undo changes to one or more modified files, restoring them to the state of the last known commit. The `git restore` command is used in both of these cases, except the "--staged" switch is required to remove a file from the Staging Area.
+
+First, lets see how you unstage a file.<br>
+You can unstage a file with Git's `git restore` command.
+
+Remove the third line from the file "NewName.md" and stage it.
+
+[NewName.md] Before (including line numbers)<br>
+<pre>
+1. This is content
+2.
+3. This is an extra line
+4.
+5. And another small change
+</pre>
+
+[NewName.md] After (including line numbers)<br>
+<pre>
+1. This is content
+2.
+3. This is an extra line
+</pre>
+
+After modifying this file lets stage it
+<pre>
+myRepDir/$ <code>git add .</code>
+
+myRepoDir/$ <code>git status</code>
+<samp>...
+  Changes to be committed:
+    modified: NewName.md</samp>
+</pre>
+
+Now we realize we are not ready to stage this so let's remove it from staging.
+<pre>
+myRepoDir/$ <code>git restore --staged NewName.md</code>
+
+myRepoDir/$ <code>git status</code>
+<samp>  Changes: not staged for commit
+    modified:  NewName.md</samp>
+</pre>
+
+Great, we removed the file from staging.<br>
+But what if we also want to take this a step further. What if we want to undo the changes we made to NewName.md? Remember, we removed the third line from "NewFile.md". You can use Git's `git restore <file>` command.
+
+WARNING: If you modified multiple files you can confirm which files are currently "modified" using the `git status` command, where the dot means "all" modifed files. To undo changes to ALL modified files use the `git restore .` command. To undo changes to only ONE file use the `git restore <file>` command.
+<pre>
+myRepDir/$ <code>git restore NewName.md</code>
+
+myRepDir/$ <code>git status</code>
+... working tree clean
+</pre>
+
+If all went well the results will include
+1. The file looks like it did before you modified it. In the case of "NewName.md" you should see the third line you previously deleted is back (its restored).
+2. The modified file is no longer displayed when using `git status` because it is no longer in a modified state. It is back to a state of your last commit.
+
+
+
+
 
