@@ -488,7 +488,7 @@ For example, what if we wanted to see what the project looked like before the fi
 
 First, we would list all commits:
 <pre>
-myRepDir/$ <code>git log --oneline</code>
+myRepoDir/$ <code>git log --oneline</code>
 <samp>
 g7ac56j  (HEAD -> main, origin/main, origin/HEAD) Adds Second Folder
 w3hduoi  moves newName.md to First_folder
@@ -543,3 +543,38 @@ Switched to branch 'main'
 Your branch is up to date with 'origin/main'
 </samp>
 </pre>
+
+## Revert a Commit
+There may be previous commits that you want to undo. The `git revert <commit>` command will will undo the changes made by a specific commit. You provide the commit checksum value.
+
+For example, what if we wanted to undo the commit we made for renaming 'gitStatusDemo.md" to "newStatus.md".<br>
+First, we would track down that commit id/checksum using the `git log` command, or on GitHub. If you are using the command, remember you can use the "--oneline" switch to provide a condensed list. You could also use the "--grep" switch to use a search string.<br>
+
+<pre>
+myRepoDir/$ <code>git log --oneline</code>
+<samp>
+7a86cab  (HEAD -> main, origin/main, origin/HEAD) Adds Second Folder
+3db990c  moves newName.md to First_folder
+8dcf740  renames gitStatusDemo.md to newStatus.md
+47x7sxx  renames Example.md to NewName.md
+4cidhf0  Removes Example02.md
+pOj863x  adds extra lines to demonstrate git diff
+nlIL932  Adds an extra line to show how git tracks changes
+msWQp48  gitStatusDemo.md to demonstrate git status
+QYil2hL  Adding Challenge01.md as a challenge
+...</samp>
+</pre>
+
+Then, we would run the `git revert <commit>` command. This command opens an editor window, which allows you to modify the commit message. The default message is typically fine as it simply writes "Revert", followed by the commit message. When you close the editor, the commit is finished.<br>
+NOTE: If this command opens up a Vim editor instead of one in VSCode, you can type ":qa" to quit.
+<pre>
+myRepoDir/$ <code>git revert 8dcf740</code>
+</pre>
+
+Now if you go look in your file explorer you should see the file is named "gitStatusDemo.md" as it was before it was changed in an earlier commit. You will also see that this command created a new "commit".
+
+If there were any conflicts, Git will provide steps to remedy them. The next lesson will attempt to discuss potential conflicts and how to handle them.<br>
+If running this command provides conflicts and you want to cancel the revert you can use the `git revert --abort` command.
+
+To have Git try to resolve conflicts you can use the `git revert --continue` command.
+
