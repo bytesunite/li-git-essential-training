@@ -54,7 +54,7 @@ Nothing to commit, working tree clean
 
 As you can see our local repo is 1 commit ahead of the remote repo. The push the updated file to the repo use Git's `git push` command.
 <pre>
-myRepoDir/$ '<code>it push</code>
+myRepoDir/$ <code>git push</code>
 ...
 myRepoDir/$ <code>git status</code>
 <samp>On branch main
