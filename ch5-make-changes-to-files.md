@@ -382,6 +382,98 @@ If all went well the results will include
 2. The modified file is no longer displayed when using `git status` because it is no longer in a modified state. It is back to a state of your last commit.
 
 
+## View Commit History
+We have talked using Git to track the history of our files, what has changed and when.
+But how to we see the history? Git's `git log` command shows us a commit history.<br>
+Each entry includes
+- unique identifier for each commit, called a "checksum"
+- author's name
+- date and time of the commit
+- commit description
+
+When use use `git log` and there are lots of commits you can use press the spacebar to scroll futher down the list. You can press the "q" key to exit the log.
+<pre>
+myRepoDir/$ <code>git log</code>
+commit: 208c44a....
+Author: Barbara
+Date: Tue Apr 1, 12:24:34 2025 -0700
+
+    Create Example02.md
+
+commit: f9908c44a....
+Author: Barbara
+Date: Tue Apr 1, 20:24:34 2025 -0700
+
+    adds Example.md to demonstrate the git process
+...
+</pre>
 
 
+There are also options to filter this list. For example to see details about a specific commit you can copy the "checksum" of a commit and paste it after Git's `git show <checksum>` command.<br>
+NOTE: If the commit content is long, use the spacebar to cycle through it & type "q" to exit.
 
+This command will display
+- unique commit checksum
+- author
+- date
+- commit message
+- details of the content that changed (additions, deletions)
+
+<pre>
+myRepoDir/$ <code>git show f994a4...</code>
+<samp>commit: 4a4a8...
+Author: Barbara
+Date: Tue Apr 1, 20:24:34 2025 -0700
+
+    adds Example.md to demonstrate the git process
+diff --git a/Example.md b/Example.md
+new file mode 100644
+...
++ This is content
+\ No newline at end of file</samp>
+</pre>
+
+
+Additionaly the "-p" switch can be used to list commit history with information about what changes were performed (new file, rename, deleted file, etc.). Use the `git log -p` command.
+
+The "--oneline" switch makes the commit history log more readable. It shortens the commit checksum to 7 characters and provides a short summary.
+<pre>
+myRepoDir/$ <code>git log --oneline</code>
+<samp>
+7ac56j  (HEAD -> main, origin/main, origin/HEAD) Adds Second Folder
+3hduoi  moves newName.md to First_folder
+898sl8  renames gitStatusDemo.md to newStatus.md
+7x7sxx  renames Example.md to NewName.md
+...</samp>
+</pre>
+
+The "--grep" switch allows you to search for a commit with all or part of the commit message. Use the command `git log --grep='some string to search with'` to specify a string to search for. A list of commits with mention of the search string are displayed.
+<pre>
+myRepoDir/$ <code>git log --grep="Example"</code>
+<samp>
+commit: 747sdj9...
+Author: Barbara
+Date: Tue Apr 1, 21:31:45 2025 +0000
+
+  renames Example.md to NewName.md
+
+commit: 8skehT...
+Author: Barbara
+Date: Tue Apr 1, 21:45:45 2025 +0000
+
+  Removes removes Example02.md
+
+commit: 8skehT...
+Author: Barbara
+Date: Tue Apr 1, 13:45:45 2025 +0000
+
+  Create Example02.md
+
+...
+</samp>
+</pre>
+
+
+This course we stuck to a single branch but Git provides `git log --branch` which provides a visual representation to help see how commits align with specific branches.
+
+The commit history viewed in the command line is not as pretty as a GUI. When using a remote repository such as GitHub, it contains a commit history where you can scroll through the list and select a specific commit to view it in a color coded interface right in the browser. Simply go to your remote repo and in the top right above the list of files/folders there is a "Commits" button you can click on.
