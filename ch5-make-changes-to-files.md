@@ -477,3 +477,61 @@ Date: Tue Apr 1, 13:45:45 2025 +0000
 This course we stuck to a single branch but Git provides `git log --branch` which provides a visual representation to help see how commits align with specific branches.
 
 The commit history viewed in the command line is not as pretty as a GUI. When using a remote repository such as GitHub, it contains a commit history where you can scroll through the list and select a specific commit to view it in a color coded interface right in the browser. Simply go to your remote repo and in the top right above the list of files/folders there is a "Commits" button you can click on.
+
+
+## Go Back in Git History
+We have seen how to use Git's `git log` command to view a history of commits. Let's take this a step further and see how we can browse the code of an older version of our project.
+
+WARNING: The instructor fails to mention you must NOTE have any modified or staged files before running the `git checkout` command.
+
+For example, what if we wanted to see what the project looked like before the file "Example02.md" was deleted. We would log our commits to find the commit checksum before this commit.
+
+First, we would list all commits:
+<pre>
+myRepDir/$ <code>git log --oneline</code>
+<samp>
+g7ac56j  (HEAD -> main, origin/main, origin/HEAD) Adds Second Folder
+w3hduoi  moves newName.md to First_folder
+8898sl8  renames gitStatusDemo.md to newStatus.md
+47x7sxx  renames Example.md to NewName.md
+4cidhf0  Removes Example02.md
+pOj863x  adds extra lines to demonstrate git diff
+nlIL932  Adds an extra line to show how git tracks changes
+msWQp48  gitStatusDemo.md to demonstrate git status
+QYil2hL  Adding Challenge01.md as a challenge
+...</samp>
+</pre>
+
+Then we would grab the commit checksum BEFORE the one that removes "Example02.md". In the list above, you will see the commit prior to this was "adds extra lines to demonstrate git diff". Copy the commit checksum.
+
+With the copied checksum, use Git's `git checkout <checksum>` command and paste in the copied checksum. The description of what is happening is discussed after the example below. In short, it is a way to view the previous state of a project.<br>
+ATTENTION: After running this command, pay attention to your file Explorer because files that were created or modified after this point are no longer available.
+
+<pre>
+myRepoDir/$ <code>git checkout pOj863x</code>
+<samp>
+Note: switching to 'pOj863x'.
+
+You are in 'detached HEAD' state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c &lt;new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+HEAD is now p0j863x adds extra lines to demonstrate git diff
+</samp>
+
+You are now in what is known as a "detached HEAD" state. This is often where you can go to view a previous state of a project, but not the best place to modify the project.
+
+Use the `git checkout main` to exit the "detached HEAD" state and return to current state of your project.
+<pre>
+myRepoDir/$ <code>git checkout main</code>
+<samp>Previous HEAD position was p0j863x adds extra lines to demonstrate git diff
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'
+</samp>
+</pre>
