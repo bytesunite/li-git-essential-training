@@ -524,8 +524,16 @@ Or undo this operation with:
 
 HEAD is now p0j863x adds extra lines to demonstrate git diff
 </samp>
+</pre>
 
-You are now in what is known as a "detached HEAD" state. This is often where you can go to view a previous state of a project, but not the best place to modify the project.
+You are now in what is known as a "detached HEAD" state. This is often where you can go to view a previous state of a project, but not the best place to modify the project.<br>
+
+To view the current branch of your project you can use the `git status` command.
+<pre>
+myRepoDir/$ <code>git statue</code>
+HEAD detached at pOj863x
+nothing to commit, working tree clean
+</pre>
 
 Use the `git checkout main` to exit the "detached HEAD" state and return to current state of your project.
 <pre>
