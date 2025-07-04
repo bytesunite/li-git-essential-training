@@ -530,7 +530,7 @@ You are now in what is known as a "detached HEAD" state. This is often where you
 
 To view the current branch of your project you can use the `git status` command.
 <pre>
-myRepoDir/$ <code>git statue</code>
+myRepoDir/$ <code>git status</code>
 HEAD detached at pOj863x
 nothing to commit, working tree clean
 </pre>
