@@ -623,3 +623,20 @@ In this challenge you will make a change in your repository and then revert this
 
 It is up to you to push these commits to a remote repository or keep them locally.
 
+Instructor Solution:
+1. create a file "important_File.md", add a single line of text "This is an important file"
+2. add it to the staging area with `git add .`
+3. commit changes with `git commit -m "creates importantFile.md"`
+4. add an extra line "This is an important update". Save the file
+5. add it to the staging area with `git add .`
+6. commit changes with `git commit -m "adds extra line to importantFile.md"`
+7. create a new folder named "Important_Folder" and move the file "important_File.md" into it
+8. stage the changes with `git add .`
+9. commit changes with `git commit -m "Moved importantFile.md to Important_Folder"`
+10. push all changes to the remote repo with `git push`
+11. review git history with `git log --oneline`
+12. copy the very last commit id and press q to get to the prompt
+13. revert using the copied commit id with `git revert <commit id goes here>` and Git creates a commit message automatically. An editor is opened but you can accept the default commit message and close the editor
+14. check the status with `git status` and you should see a new commit message for reverting moving the file.
+
+If you look at your file explorer the file "important_File.md" should not be in the folder "Important_Folder" any more.
