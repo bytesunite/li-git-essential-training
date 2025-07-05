@@ -578,3 +578,33 @@ If running this command provides conflicts and you want to cancel the revert you
 
 To have Git try to resolve conflicts you can use the `git revert --continue` command.
 
+
+## Make Use of the GUI of Visual Studio Code
+Visual Studio Code provides a GUI interface for interacting with Git. First, in the left column there is an icon that looks like a Y, called "Source Control". When you make changes to a file and save it, this icon will show a number, indicating there are detected changes. If you click on this icon it will give you details on which changes were detected and even lets you add the files to the Staging area and commit them without using the terminal. It also provides a commit history.
+
+![Visual Studio Code - Source Control interface](vscode-source-control.png)
+
+To see a visual side-by-side comparison of changes you made, click on the Source Control icon, and click on a file you made changes to.<br>
+NOTE: If you are not seeing a side-by-side editor window, make sure your VSCode window is expanded to the width of your screen. You can also collapse the Explorer column if it helps you better see both files.
+
+The files in the Source Control column have a + sign next to the file. Click this will add the file to the Staging area. There is also a + sign above all files when you hover over the word "Changes". Clicking this will stage ALL changed files.<br>
+When files are staged this interface also provides a - button that makes it easy to remove them from the Staging Area.
+
+Once files are added to the Staging Area, VSCode will tell you they are staged. VSCode also provides a text box to enter the commit message and a green "Commit" button to commit changes.<br>
+After you commit files to your local repository, VSCode also provides a button "Sync Changes", which allows you push your updates to the remote repo. The first time you do this VSCode alerts you that both (pull & push) are executed to download any new content and push your commit to the remote repo.
+
+Additionally, there is a triple dot button ... that is to the right of "CHANGES" that provides many options which gives you more control:
+- Pull
+- Push
+- Clone
+- Checkout to...
+- Fetch
+- Commit
+- Changes
+- Pull, Push
+- Branch
+- Remote
+- Stash
+- Tags
+- Show Git Output
+
