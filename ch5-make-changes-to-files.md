@@ -608,3 +608,18 @@ Additionally, there is a triple dot button ... that is to the right of "CHANGES"
 - Tags
 - Show Git Output
 
+
+## Challege - Make a Change and Revert
+In this challenge you will make a change in your repository and then revert this change.
+
+1. Create a new Markdown file in our repository
+2. Add a line to it and commit it to the local repository
+3. Add another line to the file
+4. Commit this file
+5. Move the file into a folder
+6. Do a new commit
+7. Revert the file to the previous commit,<br> 
+   which uses the git history to move the file back out of the folder
+
+It is up to you to push these commits to a remote repository or keep them locally.
+
