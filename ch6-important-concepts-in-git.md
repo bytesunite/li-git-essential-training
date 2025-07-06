@@ -246,13 +246,14 @@ The instructor fails to show how to do this but it is pretty straight forward on
 2. Then to the right of the "logfolder" branch you will see an icon that looks like a garbage can. Click this button to delete the branch.
 3. Go back to the main page for your remote repository. You should see the merged data is still in your repository, but you will also see that branch is no longer listed in the top menu (previously is said 2 branches now it says 1 Branch). Clicking on branch button above your repo files will show the branch does not exist anymore.
 4. On your local repo you will still have the "logfolder" branch. To delete this you can use the `git branch -d <branch name>` command.
-    1. View all branches
+    1. <div>View all branches
     <div style="width:88%;margin:0 auto;">
     <pre>/$ <code>git branch</code><br>
     <samp>* main
     logfolder</samp></pre>
     </div>
-
+    </div>
+    
     2. Delete the logfolder branch
     <div style="width:88%;margin:0 auto;">
     <pre>/$ <code>git branch -d logfolder</code></pre>
