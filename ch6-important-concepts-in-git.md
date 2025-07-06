@@ -251,17 +251,17 @@ The instructor fails to show how to do this but it is pretty straight forward on
     <div style="width:88%;margin:0 auto;">
     <pre>/$ <code>git branch</code><br>
     <samp>* main
-    logfolder</samp>
-    </pre></div>
+    logfolder</samp></pre>
+    </div>
 
     2. Delete the logfolder branch
     <div style="width:88%;margin:0 auto;">
-    <pre>/$ <code>git branch -d logfolder</code>
-    </pre></div>
+    <pre>/$ <code>git branch -d logfolder</code></pre>
+    </div>
     
     3. Confirm deletion
     <div style="width:88%;margin:0 auto;">
     <pre><code>git branch</code><br>
-    <samp>* main</samp>
-    </pre><div style="width:88%;margin:0 auto;">
+    <samp>* main</samp></pre>
+    <div style="width:88%;margin:0 auto;">
 
