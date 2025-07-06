@@ -132,3 +132,90 @@ Within the ".git" folder there is a file named "config" which holds details abou
 It is NOT suggested to change anything in the ".git" folder as it may break your repository.
 
 If you delete the ".git" folder, you will no longer have a Git repository. Instead, you will just have a plain file system directory
+
+
+## Create a Branch in Your Repository
+A branch is like a separate copy of your repository that you can work on separately.
+
+A branch can be helpful when
+- developing new features without modifying production code
+- multiple people are working on the same project at the same time
+
+Let's walk through how this works
+1. First there is the main repository
+2. When you make a *branch* you are making a copy of this repository<br>
+   SIDE NOTE: You can make a branch of a remote or local repository
+3. Once you have a branch you can make changes in it without modifying the original repo.
+
+Try it out!<br>
+The instructor shows how to create a new branch in your local environment, create files in the branch, then push it to your remote repository.
+
+The steps taken include:
+1. make sure the working tree is clean
+2. create a new branch and switch to the new branch
+3. create new content in the branch
+4. stage and commit all changes
+5. push changes to the remote repository
+6. verify the branch on GitHub
+
+So let's get started:
+1. Step one is to make sure your working tree is clean by using the `git status` command.
+<div style="width:88%; margin:0 auto;">
+<pre>
+/$ <code>git status</code>
+<samp>On Branch main
+Your branch is up to date with 'origin/main'
+
+nothing to commit, working tree is clean</samp>
+</pre></div>
+
+2. Use `git branch <branch name>` to create a new branch. Give it a name that describes its purpose, such as a new feature you are developing. In this example the instructor created a new branch named "logfolder".
+<div style="width:88%; margin:0 auto;">
+<pre>
+/$ <code>git branch logfolder</code>
+</pre>
+The new branch "logfolder" is created, but we need to switch to the new branch before we start working on it. This is done with the <code>git checkout &lt;branch name></code> command.
+<pre>
+/$ <code>git checkout logfolder</code>
+<samp>Switched to branch 'logfolder'</samp>
+</div>
+
+3. Create a folder named "logs" in your new branch, with two files, "logs01.log" & "logs02.log".
+<div style="width:88%; margin:0 auto;">
+<pre>
+  logs/
+    logs01.log
+    logs02.log
+</pre>
+</div>
+
+4. Add all changes to the Staging area and then commit these changes.
+<div style="width:88%; margin:0 auto;">
+<pre>
+/$ <code>git add .</code>
+/$ <code>git commit -m "creates a folder for logs"</code>
+</pre>
+</div>
+
+5. Attempting to push this changes results in an <span style="color:red">ERROR</span>! Git points out that our branch "logfolder" is in the local repo but not found in our remote repo. It says, "logfolder has no upstream branch".<br>
+TERM: <span style="color:orange">*Upstream branch*</span> - An upstream branch in Git refers to a branch that serves as a reference point for another branch.
+<div style="width:88%; margin:0 auto;">
+<pre>
+/$<code>git push</code>
+<samp><span style="color:red">fatal: The current branch logfolder has no upstream branch.</span><br>
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin logfolder
+
+To have this happen automatically for branches without a tracking upstream, see 'push.autoSetupRemote' in 'git help config'.</samp>
+</pre>
+So in order to make this work, we must take Git's advice and specify the upstream branch.
+<pre>
+/$ <code>git push --set-upstream origin logfolder</code>
+</pre></div>
+</div>
+
+
+6. Go to GitHub and view your repo. You should see there are two branches. If you look closely, when you are on the main branch there is no "logs" folder, it is only found in the new "logfolder" branch.
+
+
