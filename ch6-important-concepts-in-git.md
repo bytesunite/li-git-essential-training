@@ -213,7 +213,6 @@ So in order to make this work, we must take Git's advice and specify the upstrea
 <pre>
 /$ <code>git push --set-upstream origin logfolder</code>
 </pre></div>
-</div>
 
 
 6. Go to GitHub and view your repo. You should see there are two branches. If you look closely, when you are on the main branch there is no "logs" folder, it is only found in the new "logfolder" branch.
@@ -246,7 +245,7 @@ The instructor fails to show how to do this but it is pretty straight forward on
 1. Navigate to your remote repository. You should see your repository files. Above this is a menu with the branch name, such as "main", followed by a button "branches". Click on the button "branches" to see a list of branches. 
 2. Then to the right of the "logfolder" branch you will see an icon that looks like a garbage can. Click this button to delete the branch.
 3. Go back to the main page for your remote repository. You should see the merged data is still in your repository, but you will also see that branch is no longer listed in the top menu (previously is said 2 branches now it says 1 Branch). Clicking on branch button above your repo files will show the branch does not exist anymore.
-4. On your local repo you will still have the "logfolder" branch. To delete this you can use the `git branch -d <branch name>` command.<br>
+4. On your local repo you will still have the "logfolder" branch. To delete this you can use the `git branch -d <branch name>` command.
     1. View all branches
     <div style="width:88%;margin:0 auto;">
     <pre>/$ <code>git branch</code><br>
@@ -261,7 +260,26 @@ The instructor fails to show how to do this but it is pretty straight forward on
     
     3. Confirm deletion
     <div style="width:88%;margin:0 auto;">
-    <pre><code>git branch</code><br>
+    <pre>/$ <code>git branch</code>
     <samp>* main</samp></pre>
-    <div style="width:88%;margin:0 auto;">
+    </div>
 
+
+## Git Commit Messages
+Git commit messages are important in explaining what happened in a specific commit. Best practices for commit messages include:
+1. Describe exactly what changes were applied
+2. Describe in the present tense.<br>
+   For example, instead of saying you "fixed" something, use "fixes" something.
+3. The commit message should be no more than 50 characters.
+4. An optional detailed explanation can be added if a blank like is provided.<br>
+   To write a multi-line comment you simply use the `git commit` command, minus the "-m 'some message'" part. When you do this it opens the editor you specified for your environment. The title is on the first line, followed by a blank line, then the detailed message.<br>
+   When you close the editor, the commit is complete.
+   <pre>
+   Added LinkedinLearning to gitStatusDemo.md<br>
+
+   This commit doesn't serve a real purpose. It is used to
+   demonstrate how to create a more detailed commit message.
+   </pre>
+
+Clear and detailed commit messages are very helpful to understand what was actually done.
+ 
