@@ -219,3 +219,33 @@ So in order to make this work, we must take Git's advice and specify the upstrea
 6. Go to GitHub and view your repo. You should see there are two branches. If you look closely, when you are on the main branch there is no "logs" folder, it is only found in the new "logfolder" branch.
 
 
+## Create and merge a pull request
+This lesson explains how to make a *pull request*.<br>
+TERM: <span style="color:orange">Pull Request</span> - A *Pull Request* is a request to merge two separate branches. This process allows others to review and accept changes before merging the branches.
+
+In a local repository you would typically merge the two branches without a pull request. But when working on a team or a larger project a pull request is a better way. A pull request provides a way for other team members to review and accept changes from your branch. It is a best practice to delete the other branch once it has been merged with the other branch.
+
+On GitHub navigate to your repository. In the top menu you will see a "Pull Requests" button. This opens up an interface with a green button "New pull request". If an existing pull request exists, it is displayed on this screen. 
+
+In the last lesson, the instructor created a new branch "logfolder" and pushed it to the remote repo. You should see this when you click "New pull request". You can compare the two branches. You will see two branches separated by an arrow. The left branch is "base: main" and the right branch you can select from the dropdown as "logfolder". After you select "logfolder" you should be able to see all the changes you made on this new branch in comparison to the main branch. GitHub also shows green text "Able to merge" at the top if the two branches can be merged. With the two branches visible (main & logfolder), click on the "Create pull request" button to start the process. An interface allows you to create a title & description for your pull request. In this lesson the instructor provides a title of "creates a folder for logs", and provides a description that this is for demonstration purposes of how to use a pull request and that the log files are empty and no functional changes were made.
+
+1. Go to GitHub and click "Pull Requests" from the main menu
+2. Click on the green button "New pull request"
+3. The "Compare changes" page is displayed. Here you can select which branches you are attempting to merge. Make sure the left box says "base:main" and the right box says "compare:logfolder". The logfolder branch is the one that will be merged with the main branch. Feel free to review the changes.
+4. With the two branches selected (base:main & compare:logfolder) and GitHub is displaying a green message "Able to merge", click the green "Create new pull request" button.<br>
+5. A new interface is displayed allowing you to enter a title and description. After entering a title & description, click the green button "Create pull request".<br><br>
+   ![GitHub Pull Request](github-pull-request.jpg)
+6. This pull request is now available for feedback and review. Under the "Conversation" tab, you can ask someone to review the code to spot mistakes. Changes can be viewed by selecting the "Files changed" tab/button above the newly created pull request.<br>
+Since we own this remote repo we can accept the changes by clicking the green button "Merge pull request". You can choose to change the commit message before merging the branches, then click the "Confirm Merge" button to merge.<br>
+NOTE: Only people with write access to a repository can merge branches. If you are contributing to someone elses repo it is up to them to response and update their repo. Don't expect a speedy response from all GitHub users.
+
+If this was successful you will see the "logs" folder is now part of your main branch in your remote repository.
+
+The final step is to delete the "logfolder" branch we created earlier.<br>
+The instructor fails to show how to do this but it is pretty straight forward on GitHub.
+1. Navigate to your remote repository. You should see your repository files. Above this is a menu with the branch name, such as "main", followed by a button "branches". Click on the button "branches" to see a list of branches. 
+2. Then to the right of the "logfolder" branch you will see an icon that looks like a garbage can. Click this button to delete the branch.
+3. Go back to the main page for your remote repository. You should see the merged data is still in your repository, but you will also see that branch is no longer listed in the top menu (previously is said 2 branches now it says 1 Branch). Clicking on branch button above your repo files will show the branch does not exist anymore.
+
+
+
