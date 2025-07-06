@@ -20,4 +20,7 @@ A collection of errors, issues, and feedback while taking the course.
 
 ## Ch6-4 Create and merge a pull request
 1. After merging the logfolder branch the instructor fails to show how to delete the branch.
-2. The instructor should explain Git pull --rebase after merging branches on GitHub and making sure the local repo and remote repo are inline with each other
+2. The instructor should explain Git pull --rebase after merging branches on GitHub and making sure the local repo and remote repo are inline with each other. Lesson 6-6 does provide an quick overview of troubleshooting a merge conflict but it would help to explore this topic further.
+
+## Ch6-6 Solving a merge conflict
+1. This lesson does a pretty good job at demonstrating how a conflict can arise between a remote and local repository. However, it would help to provide further details in what a "rebase" means explore different options.
