@@ -20,3 +20,4 @@ A collection of errors, issues, and feedback while taking the course.
 
 ## Ch6-4 Create and merge a pull request
 1. After merging the logfolder branch the instructor fails to show how to delete the branch.
+2. The instructor should explain Git pull --rebase after merging branches on GitHub and making sure the local repo and remote repo are inline with each other
