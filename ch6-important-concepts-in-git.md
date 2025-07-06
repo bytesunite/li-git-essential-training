@@ -279,5 +279,30 @@ Git commit messages are important in explaining what happened in a specific comm
    demonstrate how to create a more detailed commit message.
    </pre>
 
-Clear and detailed commit messages are very helpful to understand what was actually done.
+Clear and descriptive commit messages are very helpful to understand what was actually done.
  
+
+## Solving a Merge Conflict
+Merge conflicts typically happen when two or more people are working on the same file and then try to merge their work with the original branch.
+
+Let's create a conflict and see how to resolve this.
+
+1. Open your local environment. Make sure you do NOT perform a `git pull` as the purpose of this is to create a conflict where the remote repo and local repo are out of sync with each other.
+
+2. Go to GitHub and navigate to your repository. Click on the file "gitStatusDemo.md", which was created earlier in the course. After it opens click on the pencil icon to edit the file. 
+
+3. Change the content, then click the green "Commit changes" button. Add a commit message, then click the green "Commit changes" button. If successul the "gitStatusDemo.md" is now reflecting the changes you made via GitHub.
+
+4. Go back to your local environment and open up "gitStatusDemo.md" and modify its content to something different than what you did on GitHub. Then save the file, add it to the Staging Area, and commit changes.
+
+5. Now attempt to push the new commit with the `git push` command. Git will REJECT it. Git warns that your current branch is behind the changes made on the remote repo. It suggests you pull the lastest changes of the remote repo to your local repo before making changes.
+
+6. So let's take Git's advice and run the `git pull` command. A WARNING is displayed saying there are "divergent branches" and provides some suggestions to configure how pull requests are made. The instructor does not show you how to configure this. 
+
+7. Instead, of configuring Git, the instructor uses the `git config pull.rebase false` command. This returns a WARNING saying that it failed to merge do to conflicts. This is because Git sees there has been changes in both the remote & local repositories and doesn't know what to do. In VSCode it provides an interface that lets you choose which changes should be accepted (compare, local, remote, or both). In this case the instructor clicks the button "Accept Current Change" in the VSCode editor above the file that has the conflict. This will overwrite the remote repo change. Then, save the file & stage it again before making a new commit.
+
+8. Finally run the `git push` command again and it should work because in the previous step you told Git you want to accept the locally changed file over the remote file. Go to GitHub and confirm the changes you made locally are updated on the remote repo.
+
+This was a simple conflict because we had two options. In the real world conflicts can be a big mess of trying to compare & merge changes from many different people.<br>
+And if you are stuck and don't know how to fix the conflict, you can always recreate your local repository as a last resort.
+
