@@ -18,6 +18,10 @@ A collection of errors, issues, and feedback while taking the course.
 ## Ch5-8 Go back in Git history
 1. The instructor fails to mention you cannot have modified or staged files when running Git's checkout command. The working tree must be clean.
 
+## Ch6
+1. It would help to show how to fix a typo in a previous commit title
+with `git rebase -i HEAD~n` where "n" is how many commits to go back.
+
 ## Ch6-4 Create and merge a pull request
 1. After merging the logfolder branch the instructor fails to show how to delete the branch.
 2. The instructor should explain Git pull --rebase after merging branches on GitHub and making sure the local repo and remote repo are inline with each other. Lesson 6-6 does provide an quick overview of troubleshooting a merge conflict but it would help to explore this topic further.
