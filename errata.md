@@ -28,3 +28,6 @@ with `git rebase -i HEAD~n` where "n" is how many commits to go back.
 
 ## Ch6-6 Solving a merge conflict
 1. This lesson does a pretty good job at demonstrating how a conflict can arise between a remote and local repository. However, it would help to provide further details in what a "rebase" means explore different options.
+
+## Ch6-8 Solution: Create a branch and a pull request
+1. The instructor fails to show how to delete the "joke" branch in both the remote repo and the local repo.
