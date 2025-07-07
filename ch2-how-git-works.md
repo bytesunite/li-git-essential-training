@@ -3,12 +3,12 @@ Now that you know the concepts of Git, lets discuss the technical details of Git
 
 ## Use Git Locally
 On you local computer you have a file explorer or finder that gives you access to files and folders. 
-Git provide 2 additional pieces
+Git provides 2 additional pieces:
 1. Staging Area
 2. Local Repository (.git)
 
 You have a file "code1.md" saved in a local folder. You work on it and come to a point you want to take a snapshot. The first step is to add the file to the staging area.
-To add a file to the stagging area you use the git `add` command followed by the file name.
+To add a file to the stagging area you use the `git add` command followed by the file name.<br>
 Open a terminal, navigate to the location of the file, then enter the command.
 
 <pre>
@@ -19,7 +19,7 @@ myFolder/
 
 myFolder/$ `git add code1.md`
 
-If you make changes to multiple files and want to add all modified files to the staging area you can use `git add .`.  The example below would add all modified files (code1.md, test.md) to the staging area.
+If you make changes to multiple files and want to add all modified files to the staging area you can use the `git add .` command.  The example below would add all modified files (code1.md, test.md) to the staging area.
 
 <pre>
 myFolder/
@@ -30,7 +30,7 @@ myFolder/
 
 myFolder/$ `git add .`
 
-NOTE: The instructor failes to mention when you add a file to the staging area, then modify it, you will have 2 different snapshots. Git will not automatically update the staging area with updates to files. You can run git add again to update the staging area with the lastest save.
+NOTE: The instructor fails to mention when you add a file to the staging area, then modify it, you will have 2 different snapshots. Git will not automatically update the staging area with updates to files. You can run `git add` again to update the staging area with the lastest save.
 
 NOTE: The instructor fails to mention `git status` is a command that is helpful to determine if files are staged and which branch you are on.
 
