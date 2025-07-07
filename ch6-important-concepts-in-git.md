@@ -306,3 +306,16 @@ Let's create a conflict and see how to resolve this.
 This was a simple conflict because we had two options. In the real world conflicts can be a big mess of trying to compare & merge changes from many different people.<br>
 And if you are stuck and don't know how to fix the conflict, you can always recreate your local repository as a last resort.
 
+
+Instructor Solution:
+1. Create a new branch `git branch joke`
+2. Switch to the new branch `git checkout joke`
+3. create a new file called "joke.md" and write a funny joke & save the file.
+4. stage and commit the changes with `git add .` and `git commit -m "adds joke to practice branches"`
+5. git push provides an error so we need to specify the upstream repo of "orgin" and the current branch of "joke", using `git push --set-upstream origin joke`
+6. you can check the status of push by running `git push` and it should show everything is up to date.
+7. Go to your GitHub repo and click the "create new pull request" button, feel free to add a description or keep the current one. Compare the changes, then merge the pull request by clicking "create pull request". Finally click the confirm button.
+
+NOTE: The instructor fails to show how to delete the "jokes" branch after merging your new joke.
+1. In GitHub click on the "branches" button then click the garbage can icon next to the "jokes" branch
+2. Locally use the `git branch -D jokes` command to delete the "jokes" branch.
